@@ -35,7 +35,7 @@
       "Thursday",
       "Friday",
       "Saturday"
-    ]
+    ];
 
     var months = [
       "January",
@@ -50,7 +50,7 @@
       "October",
       "November",
       "December"
-    ]
+    ];
 
     var now = new Date(Date.now());
 
@@ -73,8 +73,9 @@
       ms = "0" + ms;
     }
 
-    var dateString = days[day] + ", " + date + " " + months[month] + " " + parseInt(1900 + year);
+    var dateString = days[day] + ", " + date + " " + months[month] + " " + parseInt(1900 + year, 10);
     var timeString = hours + ":" + mins + ":" + secs + ":" + ms;
+    var frameTimeDiff;
     
     // calc the time diff between frames, starting with the second frame
     if (lastTime > 0) {
@@ -112,5 +113,5 @@
     // save the data about this frame for future comparison
     lastTime = now;
     lastDiff = frameTimeDiff;
-  };
+  }
 })();
